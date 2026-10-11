@@ -1,0 +1,1453 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100914">
+<title>Marwa Zatar | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Anton&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root {
+  --bg:#100914;
+  --bg2:#1b1023;
+  --purple:#774394;
+  --violet:#bb8ad8;
+  --pink:#edc9e9;
+  --white:#fff9ff;
+  --muted:#bdaec5;
+  --line:rgba(222,183,238,.2);
+  --cream:#f4f0e6;
+}
+
+* {
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-snap-type:y proximity;
+  scroll-padding-top:0;
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Cairo',sans-serif;
+  overflow-x:hidden;
+}
+
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 12% 15%,#69347a3b,transparent 38%),
+    radial-gradient(ellipse at 88% 75%,#9a54812a,transparent 34%),
+    linear-gradient(135deg,#100914,#1d1026 50%,#100914);
+}
+
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.12;
+  background-image:radial-gradient(#f0d7ff 0.6px,transparent 0.6px);
+  background-size:30px 30px;
+}
+
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+img { max-width:100%; }
+
+.page {
+  position:relative;
+  min-height:100svh;
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:90px 7%;
+  overflow:hidden;
+}
+
+.page-inner {
+  width:100%;
+  max-width:1450px;
+  margin:auto;
+}
+
+.eyebrow {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:4px;
+  color:var(--pink);
+  direction:ltr;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.gradient {
+  background:linear-gradient(110deg,#fff,#edc9e9,#b985dd);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.section-title {
+  margin:15px 0 25px;
+  font-family:'Playfair Display','Cairo',serif;
+  font-size:clamp(40px,8vw,100px);
+  font-weight:800;
+  line-height:1.05;
+  text-align:center;
+  direction:ltr;
+}
+
+.topbar {
+  position:fixed;
+  z-index:100;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 5%;
+  background:rgba(16,9,20,.75);
+  border-bottom:1px solid #edc9e918;
+  backdrop-filter:blur(18px);
+}
+
+.brand {
+  direction:ltr;
+  font-weight:900;
+  font-size:21px;
+  color:var(--pink);
+  letter-spacing:2px;
+}
+
+.topbar nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.topbar nav a {
+  color:#c9b8d1;
+  font-size:11px;
+  transition:.3s;
+}
+
+.topbar nav a:hover { color:white; }
+
+/* 01 — Cover */
+
+#cover {
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  isolation:isolate;
+  position:relative;
+}
+
+.cover-decoration {
+  position:absolute;
+  width:65vw;
+  max-width:850px;
+  aspect-ratio:1;
+  border:1px solid #e9b9f016;
+  border-radius:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:
+    0 0 0 50px #e9b9f008,
+    0 0 0 100px #e9b9f005;
+  pointer-events:none;
+  z-index:0;
+}
+
+.cover-kicker {
+  position:absolute;
+  top:80px;
+  left:6%;
+  color:var(--pink);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:5px;
+  direction:ltr;
+  text-transform:uppercase;
+  z-index:5;
+  opacity:.95;
+}
+
+.cover-stage {
+  position:relative;
+  width:100%;
+  max-width:1500px;
+  padding:0 4%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+}
+
+.cover-word {
+  position:relative;
+  z-index:2;
+  margin:0;
+  font-family:'Anton',sans-serif;
+  font-weight:400;
+  font-size:clamp(80px,17.5vw,270px);
+  line-height:.85;
+  letter-spacing:-.015em;
+  color:var(--pink);
+  text-align:center;
+  direction:ltr;
+  white-space:nowrap;
+  transform:scaleY(1.35);
+  transform-origin:center;
+  text-shadow:
+    0 0 25px rgba(186,129,216,.35),
+    0 0 60px rgba(186,129,216,.18);
+}
+
+.cover-photo {
+  position:absolute;
+  right:5%;
+  bottom:0;
+  z-index:3;
+  height:78%;
+  max-height:620px;
+  width:auto;
+  object-fit:contain;
+  object-position:bottom right;
+  filter:drop-shadow(0 20px 50px rgba(90,30,120,.6)) grayscale(10%);
+  pointer-events:none;
+}
+
+.cover-line {
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  width:65px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--pink),transparent);
+  z-index:4;
+}
+
+/* 02 — About Me */
+
+#about {
+  background:linear-gradient(135deg,#160c1d77,#21132944);
+}
+
+.about-layout {
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+  gap:clamp(30px,7vw,100px);
+  max-width:1050px;
+  margin:30px auto 0;
+}
+
+.about-image-wrap {
+  position:relative;
+  max-width:340px;
+  width:100%;
+  margin:auto;
+}
+
+.about-image-wrap::before {
+  content:"";
+  position:absolute;
+  inset:17px -16px -16px 16px;
+  border:1px solid #c89add70;
+  border-radius:3px;
+}
+
+.about-image {
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  background:#291735;
+  border:1px solid var(--line);
+  filter:saturate(.85);
+}
+
+.about-copy h2 {
+  margin:0 0 20px;
+  font-size:clamp(32px,5vw,56px);
+  font-weight:900;
+  direction:ltr;
+  text-align:left;
+  font-family:'Playfair Display',serif;
+}
+
+.about-copy h2 .gradient {
+  background:linear-gradient(110deg,#bb8ad8,#edc9e9,#fff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.about-copy p {
+  font-size:15px;
+  line-height:2.3;
+  color:var(--muted);
+  margin:0 0 14px;
+  direction:ltr;
+  text-align:left;
+}
+
+.about-divider {
+  width:60px;
+  height:2px;
+  background:var(--pink);
+  margin-top:25px;
+  margin-left:0;
+}
+
+/* 03 / 05 — Section titles */
+
+.title-page {
+  text-align:center;
+  background:radial-gradient(ellipse at center,#6c387c22,transparent 60%);
+}
+
+.big-title {
+  direction:ltr;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(45px,11.3vw,155px);
+  line-height:.95;
+  letter-spacing:-.065em;
+  font-weight:800;
+  margin:20px 0;
+  color:var(--white);
+}
+
+.big-title .stroke {
+  display:block;
+  color:transparent;
+  -webkit-text-stroke:1px #d9b2eb;
+}
+
+.title-symbol {
+  font-size:24px;
+  color:var(--pink);
+  margin-bottom:25px;
+}
+
+/* 04 — Social gallery */
+
+#social-gallery {
+  padding:100px 5%;
+}
+
+.image-gallery {
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  align-items:start;
+}
+
+.gallery-image {
+  width:100%;
+  display:block;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  background:linear-gradient(135deg,#382344,#160d1d);
+  border:1px solid #edc9e923;
+  transition:transform .4s,border-color .4s,filter .4s;
+  cursor:zoom-in;
+}
+
+.gallery-image:hover {
+  transform:translateY(-5px);
+  border-color:#d8a7e77a;
+  filter:brightness(1.06);
+}
+
+/* 05 — Website title */
+
+#web-title {
+  background:radial-gradient(ellipse at 50% 50%,#55306836,transparent 60%);
+}
+
+.web-title-main {
+  font-size:clamp(47px,12vw,165px);
+}
+
+.web-title-main .stroke {
+  -webkit-text-stroke-color:#e3b9ed;
+}
+
+/* 06 — Website projects */
+
+#web-projects {
+  padding-top:110px;
+}
+
+.website-list {
+  max-width:1100px;
+  margin:35px auto 0;
+  display:grid;
+  gap:45px;
+}
+
+.website-project {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+  align-items:center;
+  padding-bottom:35px;
+  border-bottom:1px solid var(--line);
+}
+
+.website-project:nth-child(even) .website-preview { order:2; }
+
+.website-preview {
+  display:block;
+  overflow:hidden;
+  background:#24152e;
+  border:1px solid var(--line);
+}
+
+.website-preview img {
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.website-preview:hover img { transform:scale(1.035); }
+
+.website-info .number {
+  color:var(--pink);
+  font-size:11px;
+  letter-spacing:3px;
+  direction:ltr;
+}
+
+.website-info h3 {
+  font-size:clamp(23px,3vw,34px);
+  margin:12px 0;
+  direction:ltr;
+  text-align:left;
+}
+
+.website-info p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:2.2;
+  direction:ltr;
+  text-align:left;
+}
+
+.website-info .site-link {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  padding-bottom:7px;
+  border-bottom:1px solid var(--pink);
+  color:var(--pink);
+  font-size:12px;
+  transition:.3s;
+}
+
+.website-info .site-link:hover {
+  color:white;
+  border-color:white;
+}
+
+/* 07 — Contact */
+
+#contact {
+  background:radial-gradient(ellipse at 50% 20%,#683a7b24,transparent 50%);
+}
+
+.contact-heading {
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.contact-heading h2 {
+  margin:15px 0;
+  font-size:clamp(34px,6vw,65px);
+  font-weight:900;
+  direction:ltr;
+  font-family:'Playfair Display',serif;
+}
+
+.contact-heading p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:2;
+}
+
+/* كل وسائل التواصل دوائر فقط */
+
+.contact-socials {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+  max-width:650px;
+  margin:30px auto 0;
+}
+
+.social-icon {
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:50%;
+  color:var(--pink);
+  background:rgba(255,255,255,.025);
+  font-size:23px;
+  transition:
+    color .3s,
+    background .3s,
+    border-color .3s,
+    transform .3s,
+    box-shadow .3s;
+}
+
+.social-icon:hover {
+  color:white;
+  background:#794494;
+  border-color:#d5a3e5;
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px #79449435;
+}
+
+.social-icon:focus-visible {
+  outline:2px solid var(--pink);
+  outline-offset:5px;
+}
+
+/* ألوان مميزة لبعض الأيقونات */
+
+.social-icon.whatsapp:hover {
+  background:#128c4a;
+  border-color:#25D366;
+}
+
+.social-icon.instagram:hover {
+  background:#9b367b;
+  border-color:#e6a2d8;
+}
+
+.social-icon.facebook:hover {
+  background:#1877F2;
+  border-color:#1877F2;
+}
+
+.social-icon.email:hover {
+  background:#70418c;
+}
+
+.social-icon.phone:hover {
+  background:#70418c;
+}
+
+.contact-footer {
+  margin-top:35px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* 08 — Thank you */
+
+#thanks {
+  text-align:center;
+  background:radial-gradient(ellipse at center,#6635752b,transparent 55%);
+}
+
+.thanks-small {
+  color:var(--pink);
+  font-size:11px;
+  letter-spacing:5px;
+  direction:ltr;
+}
+
+.thanks-title {
+  direction:ltr;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(58px,13vw,175px);
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-.06em;
+  margin:30px 0;
+  background:linear-gradient(110deg,#fff,#edc9e9,#b985dd);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.thanks-arabic {
+  font-size:20px;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.thanks-caption {
+  margin-top:14px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:2;
+}
+
+.thanks-line {
+  width:75px;
+  height:1px;
+  margin:35px auto;
+  background:linear-gradient(90deg,transparent,var(--pink),transparent);
+}
+
+.thanks-brand {
+  direction:ltr;
+  color:#b49cbd;
+  font-size:10px;
+  letter-spacing:3px;
+}
+
+/* Lightbox */
+
+.lightbox {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:500;
+  align-items:center;
+  justify-content:center;
+  background:rgba(8,4,12,.96);
+  padding:20px;
+}
+
+.lightbox.open { display:flex; }
+
+.lightbox img {
+  max-width:94vw;
+  max-height:88vh;
+  object-fit:contain;
+}
+
+.lightbox button {
+  position:absolute;
+  top:18px;
+  left:20px;
+  width:45px;
+  height:45px;
+  border:1px solid var(--line);
+  background:#281731;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* Reveal animations */
+
+.reveal {
+  opacity:0;
+  transform:translateY(40px);
+  transition:
+    opacity .9s cubic-bezier(.22,.61,.36,1),
+    transform .9s cubic-bezier(.22,.61,.36,1);
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.reveal-delay-1 { transition-delay:.12s; }
+.reveal-delay-2 { transition-delay:.24s; }
+.reveal-delay-3 { transition-delay:.36s; }
+.reveal-delay-4 { transition-delay:.48s; }
+
+/* Mobile */
+
+@media(max-width:760px) {
+  .topbar {
+    padding:12px 17px;
+  }
+
+  .topbar nav {
+    gap:14px;
+    overflow-x:auto;
+    max-width:78%;
+    scrollbar-width:none;
+  }
+
+  .topbar nav::-webkit-scrollbar { display:none; }
+
+  .topbar nav a {
+    white-space:nowrap;
+    font-size:10px;
+  }
+
+  .page {
+    padding:80px 20px;
+  }
+
+  #cover {
+    padding:0;
+    min-height:100svh;
+  }
+
+  .cover-decoration {
+    width:88vw;
+    max-width:400px;
+    box-shadow:
+      0 0 0 30px #e9b9f008,
+      0 0 0 60px #e9b9f005;
+  }
+
+  .cover-kicker {
+    top:70px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:9px;
+    letter-spacing:4px;
+    text-align:center;
+  }
+
+  .cover-stage {
+    padding:0 6%;
+    height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .cover-word {
+    font-size:22vw;
+    letter-spacing:-.01em;
+    transform:scaleY(1.25);
+    text-shadow:
+      0 0 15px rgba(186,129,216,.35),
+      0 0 35px rgba(186,129,216,.18);
+  }
+
+  .cover-photo {
+    right:50%;
+    transform:translateX(50%);
+    bottom:0;
+    height:58%;
+    max-height:360px;
+    object-position:bottom center;
+    filter:drop-shadow(0 15px 35px rgba(90,30,120,.7)) grayscale(10%);
+  }
+
+  .cover-line {
+    bottom:45px;
+    width:55px;
+  }
+
+  .about-layout {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .about-image-wrap {
+    max-width:230px;
+  }
+
+  .about-image-wrap::before {
+    inset:12px -12px -12px 12px;
+  }
+
+  .about-copy { text-align:center; }
+
+  .about-copy h2 {
+    text-align:center;
+    font-size:clamp(30px,9vw,42px);
+  }
+
+  .about-copy p {
+    text-align:center;
+    font-size:14px;
+    line-height:2.1;
+  }
+
+  .about-divider {
+    margin:22px auto 0;
+  }
+
+  .section-title {
+    font-size:clamp(38px,10vw,70px);
+  }
+
+  .big-title {
+    font-size:clamp(38px,11vw,70px);
+    margin:15px 0;
+  }
+
+  .title-symbol {
+    font-size:20px;
+    margin-bottom:18px;
+  }
+
+  #social-gallery {
+    padding:85px 10px;
+  }
+
+  .image-gallery {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+  }
+
+  .gallery-image {
+    aspect-ratio:3/4;
+  }
+
+  #web-projects {
+    padding-top:90px;
+  }
+
+  .website-project {
+    grid-template-columns:1fr;
+    gap:15px;
+    padding-bottom:25px;
+  }
+
+  .website-project:nth-child(even) .website-preview {
+    order:0;
+  }
+
+  .website-info h3 {
+    font-size:clamp(20px,6vw,26px);
+    text-align:left;
+  }
+
+  .website-info p {
+    text-align:left;
+    font-size:13px;
+  }
+
+  .contact-heading h2 {
+    font-size:clamp(30px,9vw,42px);
+  }
+
+  .contact-socials {
+    gap:14px;
+    max-width:330px;
+    margin-top:25px;
+  }
+
+  .social-icon {
+    width:52px;
+    height:52px;
+    flex-basis:52px;
+    font-size:21px;
+  }
+
+  .thanks-title {
+    font-size:clamp(50px,17vw,90px);
+  }
+
+  .thanks-arabic { font-size:18px; }
+
+  .thanks-caption {
+    font-size:12px;
+    padding:0 15px;
+  }
+
+  .thanks-brand {
+    font-size:9px;
+    letter-spacing:2px;
+  }
+}
+
+@media(max-width:380px) {
+  .cover-word {
+    font-size:21vw;
+  }
+
+  .cover-photo {
+    height:52%;
+    max-height:320px;
+  }
+
+  .cover-kicker {
+    font-size:8px;
+    letter-spacing:3px;
+  }
+
+  .image-gallery {
+    gap:5px;
+  }
+
+  .contact-socials {
+    gap:11px;
+  }
+
+  .social-icon {
+    width:48px;
+    height:48px;
+    flex-basis:48px;
+    font-size:19px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  .reveal {
+    opacity:1;
+    transform:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="#cover" class="brand">Marwa Zatar</a>
+
+  <nav aria-label="Navigation">
+    <a href="#about">About</a>
+    <a href="#social-title">Social Media Design</a>
+    <a href="#web-title">Web Design</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- 01: Cover -->
+
+<section class="page" id="cover">
+  <div class="cover-decoration"></div>
+  <div class="cover-kicker reveal">Graphic Designer</div>
+
+  <div class="cover-stage">
+    <h1 class="cover-word reveal">PORTFOLIO</h1>
+  </div>
+
+  <div class="cover-line reveal reveal-delay-3"></div>
+</section>
+
+<!-- 02: About Me -->
+
+<section class="page" id="about">
+  <div class="page-inner">
+    <div class="eyebrow reveal">About Me</div>
+
+    <div class="about-layout">
+      <div class="about-image-wrap reveal reveal-delay-1">
+        <img
+          class="about-image"
+          src="images/marwa.jpg"
+          alt="Marwa Zatar"
+          onerror="this.style.opacity='.15'"
+        >
+      </div>
+
+      <div class="about-copy">
+        <h2 class="reveal reveal-delay-2">
+          About <span class="gradient">Me</span>
+        </h2>
+
+        <p class="reveal reveal-delay-3">
+          I’m Marwa Gamal Zatar, a Junior Graphic Designer and Computer Science graduate from Damietta University. I have a passion for creating creative and visually appealing designs, with skills in graphic design, web design, and social media content creation. I work with tools such as Adobe Photoshop, Illustrator, and Canva, alongside my knowledge of HTML, CSS, and JavaScript. I’m always eager to learn, explore new ideas, and develop my skills to create meaningful and impactful visual experiences.
+        </p>
+
+        <p class="reveal reveal-delay-4">
+          Graphic Design | Social Media Design | Web Design | Creative Content
+          with a focus on colors, details, and the visual identity of each project.
+        </p>
+
+        <div class="about-divider reveal reveal-delay-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03: Social Media title -->
+
+<section class="page title-page" id="social-title">
+  <div class="page-inner">
+    <div class="title-symbol reveal">
+      <i class="fa-solid fa-asterisk"></i>
+    </div>
+
+    <h2 class="big-title reveal reveal-delay-1">
+      SOCIAL MEDIA
+      <span class="stroke">DESIGN</span>
+    </h2>
+  </div>
+</section>
+
+<!-- 04: Social Media gallery -->
+
+<section class="page" id="social-gallery">
+  <div class="page-inner">
+    <div class="image-gallery" id="socialGallery"></div>
+  </div>
+</section>
+
+<!-- 05: Website title -->
+
+<section class="page title-page" id="web-title">
+  <div class="page-inner">
+    <div class="title-symbol reveal">
+      <i class="fa-solid fa-window-maximize"></i>
+    </div>
+
+    <h2 class="big-title web-title-main reveal reveal-delay-1">
+      WEBSITE
+      <span class="stroke">DESIGN</span>
+    </h2>
+  </div>
+</section>
+
+<!-- 06: Website projects -->
+
+<section class="page" id="web-projects">
+  <div class="page-inner">
+    <div class="section-title reveal">
+      <span class="gradient">Web Projects</span>
+    </div>
+
+    <div class="website-list" id="websiteList"></div>
+  </div>
+</section>
+
+<!-- 07: Contact -->
+
+<section class="page" id="contact">
+  <div class="page-inner">
+
+    <div class="contact-heading">
+      <div class="eyebrow reveal">Get In Touch</div>
+
+      <h2 class="reveal reveal-delay-1">
+        Contact <span class="gradient">Me</span>
+      </h2>
+
+      <p class="reveal reveal-delay-2">
+        I'd love to hear from you about design projects,
+        digital ads, and websites.
+      </p>
+    </div>
+
+    <!-- دوائر التواصل فقط بدون مستطيلات أو نصوص -->
+
+    <div
+      class="contact-socials reveal reveal-delay-3"
+      id="contactSocials"
+      aria-label="Contact and social media links">
+    </div>
+
+    <div class="contact-footer reveal reveal-delay-4">
+      Looking forward to connecting with you.
+    </div>
+
+  </div>
+</section>
+
+<!-- 08: Thank you -->
+
+<section class="page" id="thanks">
+  <div class="page-inner">
+    <div class="thanks-small reveal">THE END · FOR NOW</div>
+
+    <h2 class="thanks-title reveal reveal-delay-1">THANK YOU</h2>
+
+    <p class="thanks-caption reveal reveal-delay-3">
+      Thank you for your time and interest in exploring my work.
+      <br>
+      I hope we meet in a creative project soon.
+    </p>
+
+    <div class="thanks-line reveal reveal-delay-3"></div>
+
+    <div class="thanks-brand reveal reveal-delay-4">
+      MARWA ZAATER · CREATIVE PORTFOLIO
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Image preview -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Design Preview">
+
+  <button id="closeLightbox" type="button" aria-label="Close">×</button>
+  <img id="lightboxImage" src="" alt="Design Preview">
+</div>
+
+<script>
+
+/* 1. Social Media designs */
+
+const socialWorks = [
+  "images/social-1.jpg",
+  "images/social-2.jpg",
+  "images/social-3.jpg",
+  "images/social-4.jpg",
+  "images/social-5.jpg",
+  "images/social-6.jpg",
+  "images/social-7.jpg",
+  "images/social-8.jpg",
+  "images/social-9.jpg",
+  "images/social-10.jpg",
+  "images/social-11.jpg",
+  "images/social-12.jpg",
+  "images/social-13.jpg"
+];
+
+/* 2. Website project */
+
+const websites = [
+  {
+    title: "متجر مروه للعطور و الزيوت الطبيعيه",
+    description: "تصميم موقع إلكتروني لمتجر متخصص في بيع العطور والزيوت الطبيعية، مع التركيز على إبراز المنتجات بطريقة أنيقة وجذابة، وتقديم تجربة تصفح سهلة ومنظمة تعكس جمال وفخامة العلامة التجارية",
+    image: "images/website-1.jpg",
+    url: "https://marwazatar591-hash.github.io/marwa-website/"
+  }
+];
+
+/* 3. Contact details */
+
+const contactInfo = {
+  phone: "201065421958",
+  whatsapp: "201065421958",
+  email: "marwazatar89@gmail.com",
+
+  instagram: "https://www.instagram.com/marwa_zatar?exln=MXNndmo4c25vaW96Zw%3D%3D&utm_source=qr",
+
+  linkedin: "",
+
+  facebook: "https://www.facebook.com/share/19otAfcrdz/?mibextid=wwXIfr"
+};
+
+/* 4. Helper functions */
+
+function escapeHtml(value = "") {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function safeUrl(value) {
+  if (!value) return "";
+
+  try {
+    const url = new URL(value);
+
+    return ["https:", "http:"].includes(url.protocol)
+      ? url.href
+      : "";
+  } catch {
+    return "";
+  }
+}
+
+/* 5. Render Social Media gallery */
+
+const gallery = document.getElementById("socialGallery");
+
+gallery.innerHTML = socialWorks.map((src, index) => {
+  const delay = "reveal-delay-" + ((index % 3) + 1);
+
+  return `
+    <div class="gallery-item reveal ${delay}">
+      <img
+        class="gallery-image"
+        src="${escapeHtml(src)}"
+        alt="Social media design ${index + 1}"
+        loading="lazy"
+        tabindex="0"
+        role="button"
+        data-preview="${escapeHtml(src)}"
+        onerror="this.style.visibility='hidden'"
+      >
+    </div>
+  `;
+}).join("");
+
+/* 6. Render Website projects */
+
+const websiteList = document.getElementById("websiteList");
+
+websiteList.innerHTML = websites.map((site, index) => {
+  const url = safeUrl(site.url);
+  const delay = "reveal-delay-" + Math.min(index + 1, 4);
+
+  return `
+    <article class="website-project reveal ${delay}">
+
+      <a
+        class="website-preview"
+        href="${url || '#web-projects'}"
+        ${url ? 'target="_blank" rel="noopener noreferrer"' : ""}
+        aria-label="Project ${escapeHtml(site.title)}">
+
+        <img
+          src="${escapeHtml(site.image)}"
+          alt="${escapeHtml(site.title)}"
+          loading="lazy"
+          onerror="this.style.opacity='.12'"
+        >
+      </a>
+
+      <div class="website-info">
+
+        <div class="number">
+          PROJECT · ${String(index + 1).padStart(2, "0")}
+        </div>
+
+        <h3>${escapeHtml(site.title)}</h3>
+
+        <p>${escapeHtml(site.description)}</p>
+
+        ${
+          url
+          ? `<a class="site-link"
+                href="${escapeHtml(url)}"
+                target="_blank"
+                rel="noopener noreferrer">
+                VISIT WEBSITE
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+             </a>`
+          : `<span class="site-link" style="opacity:.65">
+                Website link coming soon
+             </span>`
+        }
+
+      </div>
+    </article>
+  `;
+}).join("");
+
+/* 7. Render ALL contact icons as circles */
+
+function renderContact() {
+  const socials = document.getElementById("contactSocials");
+
+  const phone = String(contactInfo.phone || "").trim();
+  const whatsapp = String(contactInfo.whatsapp || "").replace(/\D/g, "");
+  const email = String(contactInfo.email || "").trim();
+
+  const platforms = [];
+
+  /* WhatsApp */
+
+  if (whatsapp) {
+    platforms.push({
+      key: "whatsapp",
+      icon: "fa-brands fa-whatsapp",
+      label: "WhatsApp",
+      url: "https://wa.me/" + whatsapp
+    });
+  }
+
+  /* Phone call */
+
+  if (phone) {
+    platforms.push({
+      key: "phone",
+      icon: "fa-solid fa-phone",
+      label: "Call me",
+      url: "tel:+" + phone.replace(/[^\d]/g, "")
+    });
+  }
+
+  /* Email */
+
+  if (email) {
+    platforms.push({
+      key: "email",
+      icon: "fa-regular fa-envelope",
+      label: "Email me",
+      url: "mailto:" + email
+    });
+  }
+
+  /* Instagram, LinkedIn and Facebook */
+
+  const socialPlatforms = [
+    {
+      key: "instagram",
+      icon: "fa-brands fa-instagram",
+      label: "Instagram"
+    },
+    {
+      key: "linkedin",
+      icon: "fa-brands fa-linkedin-in",
+      label: "LinkedIn"
+    },
+    {
+      key: "facebook",
+      icon: "fa-brands fa-facebook-f",
+      label: "Facebook"
+    }
+  ];
+
+  socialPlatforms.forEach(platform => {
+    const url = safeUrl(contactInfo[platform.key]);
+
+    if (url) {
+      platforms.push({
+        ...platform,
+        url
+      });
+    }
+  });
+
+  /* Create circular, clickable icons */
+
+  socials.innerHTML = platforms.map((platform, index) => {
+    const external = platform.url.startsWith("https://");
+
+    return `
+      <a
+        class="social-icon ${platform.key}"
+        href="${escapeHtml(platform.url)}"
+        ${external ? 'target="_blank" rel="noopener noreferrer"' : ""}
+        aria-label="${escapeHtml(platform.label)}"
+        title="${escapeHtml(platform.label)}">
+
+        <i class="${platform.icon}" aria-hidden="true"></i>
+
+      </a>
+    `;
+  }).join("");
+}
+
+renderContact();
+
+/* 8. Reveal animations */
+
+function activatePage(page) {
+  page.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("visible");
+  });
+}
+
+function resetPage(page) {
+  page.querySelectorAll(".reveal").forEach(el => {
+    el.classList.remove("visible");
+  });
+}
+
+if ("IntersectionObserver" in window) {
+  const pageObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activatePage(entry.target);
+      } else {
+        resetPage(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.35
+  });
+
+  document.querySelectorAll(".page").forEach(page => {
+    pageObserver.observe(page);
+  });
+
+} else {
+  document.querySelectorAll(".page").forEach(activatePage);
+}
+
+/* 9. Image lightbox */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+function openPreview(src) {
+  if (!src) return;
+
+  lightboxImage.src = src;
+  lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closePreview() {
+  lightbox.classList.remove("open");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("click", e => {
+  const target = e.target.closest("[data-preview]");
+
+  if (target) {
+    openPreview(target.dataset.preview);
+  }
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    closePreview();
+  }
+
+  const target = document.activeElement;
+
+  if (
+    (e.key === "Enter" || e.key === " ") &&
+    target?.matches("[data-preview]")
+  ) {
+    e.preventDefault();
+    openPreview(target.dataset.preview);
+  }
+});
+
+document.getElementById("closeLightbox")
+  .addEventListener("click", closePreview);
+
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) {
+    closePreview();
+  }
+});
+
+</script>
+
+</body>
+</html>
+```
